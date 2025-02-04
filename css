@@ -1,0 +1,29 @@
+/* تغيير لون خلفية الصفحة */
+body {
+    background-color: #fafafa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* تغيير الألوان عند التمرير على الروابط */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff5733;
+}
+
+/* تصميم الأزرار */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
