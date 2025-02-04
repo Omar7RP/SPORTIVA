@@ -1,29 +1,17 @@
-/* تغيير لون خلفية الصفحة */
+/* تغيير لون خلفية الصفحة *//* style.css */
 body {
-    background-color: #fafafa;
-    color: #333;
-    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* لون خلفية الصفحة */
+    font-family: Arial, sans-serif; /* نوع الخط المستخدم في الصفحة */
 }
 
-/* تغيير الألوان عند التمرير على الروابط */
-a {
-    color: #007bff;
-    text-decoration: none;
+h1 {
+    color: #333; /* لون النص للعناوين */
+    text-align: center; /* محاذاة النص إلى المنتصف */
 }
 
-a:hover {
-    color: #ff5733;
-}
-
-/* تصميم الأزرار */
-button {
-    background-color: #28a745;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #218838;
+p {
+    color: #666; /* لون النص للفقرات */
+    font-size: 18px; /* حجم الخط للفقرات */
+    line-height: 1.6; /* المسافة بين الأسطر في الفقرات */
+    margin: 20px; /* المسافة حول الفقرات */
 }
