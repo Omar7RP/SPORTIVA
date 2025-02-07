@@ -60,57 +60,19 @@
     <a href="#" class="btn">Buy Now</a>
   </div>
 </body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sportiva Store</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+</html>from PIL import Image
+import base64
+from io import BytesIO
 
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #8b0000;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+# Load and convert the image to Base64
+image_path = "/mnt/data/bf2fd19777c9891cde18f3a7b93623be.jpg"
+with Image.open(image_path) as img:
+    buffer = BytesIO()
+    img.save(buffer, format="JPEG")
+    img_base64 = base64.b64encode(buffer.getvalue()).decode()
 
-    .container {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 40px;
-      border-radius: 15px;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-…
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empty Page</title>
-</head>
-<body>
-  <h1 style="text-align: center; margin-top: 20%;">This page is empty!</h1>
-</body>
-</html>
+# Generate HTML code snippet
+html_code = f"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,21 +80,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martial Arts Store</title>
     <style>
-        body {
+        body {{
             margin: 0;
             padding: 0;
-            background: url('bf2fd19777c9891cde18f3a7b93623be.jpg') no-repeat center center fixed;
+            background: url('data:image/jpeg;base64,{img_base64}') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
             color: white;
-        }
-        .content {
+        }}
+        .content {{
             text-align: center;
             padding: 50px;
-        }
-        h1 {
+        }}
+        h1 {{
             font-size: 3em;
-        }
+        }}
     </style>
 </head>
 <body>
@@ -142,3 +104,11 @@
     </div>
 </body>
 </html>
+"""
+
+# Save the HTML code to a file
+output_path = "/mnt/data/index_with_image.html"
+with open(output_path, "w") as file:
+    file.write(html_code)
+
+output_path
