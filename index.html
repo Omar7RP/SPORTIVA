@@ -60,20 +60,8 @@
     <a href="#" class="btn">Buy Now</a>
   </div>
 </body>
-</html># Re-import necessary modules after the execution state reset
-import os
-import shutil
-
-# Directory structure
-base_path = "/mnt/data/Martial_Arts_Store"
-os.makedirs(base_path, exist_ok=True)
-
-# Images placeholders (assuming user will replace the paths)
-orange_gloves_image = "IMG-20250208-WA0007.jpg"
-black_gloves_image = "IMG-20250208-WA0004.jpg"
-
-# Index page content
-index_content = f"""
+</html># Responsive design adjustments for mobile view
+index_content_responsive = f"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +74,7 @@ index_content = f"""
             text-align: center;
             background-color: #f9f9f9;
             padding: 20px;
+            margin: 0;
         }}
         .products {{
             display: flex;
@@ -98,9 +87,11 @@ index_content = f"""
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 15px;
-            width: 300px;
+            width: 90%;
+            max-width: 300px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }}
         .product-card img {{
             max-width: 100%;
@@ -119,6 +110,7 @@ index_content = f"""
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
         }}
         .buy-btn:hover {{
             background-color: #0056b3;
@@ -150,54 +142,11 @@ index_content = f"""
 </html>
 """
 
-# Product 1 page content
-product1_content = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venum Orange Gloves</title>
-</head>
-<body>
-    <h1>Venum Boxing Gloves (Orange)</h1>
-    <p>Sizes: 8, 10, 12</p>
-    <p>Price: 800 EGP</p>
-    <button onclick="window.location.href='index.html'">Back to Products</button>
-</body>
-</html>
-"""
-
-# Product 2 page content
-product2_content = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venum Black & Gold Gloves</title>
-</head>
-<body>
-    <h1>Venum Boxing Gloves (Black & Gold)</h1>
-    <p>Sizes: 8, 10, 12</p>
-    <p>Price: 800 EGP</p>
-    <button onclick="window.location.href='index.html'">Back to Products</button>
-</body>
-</html>
-"""
-
-# Write files
+# Update files with responsive code
 with open(os.path.join(base_path, "index.html"), "w") as file:
-    file.write(index_content)
+    file.write(index_content_responsive)
 
-with open(os.path.join(base_path, "product1.html"), "w") as file:
-    file.write(product1_content)
+# Update and create final zip archive
+shutil.make_archive("/mnt/data/Martial_Arts_Store_Responsive", 'zip', base_path)
 
-with open(os.path.join(base_path, "product2.html"), "w") as file:
-    file.write(product2_content)
-
-# Output zip file path
-output_zip = "/mnt/data/Martial_Arts_Store.zip"
-shutil.make_archive("/mnt/data/Martial_Arts_Store", 'zip', base_path)
-
-output_zip
+"/mnt/data/Martial_Arts_Store_Responsive.zip"
