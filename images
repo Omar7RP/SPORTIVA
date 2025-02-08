@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venum Gloves (Orange/Black)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Venum Gloves (Orange/Black)</h1>
+    <p>Price: 800 EGP</p>
+    <p>Available Sizes: 8, 10, 12</p>
+    <button onclick="alert('Thank you for your purchase!')">Confirm Purchase</button>
+</body>
+</html>
