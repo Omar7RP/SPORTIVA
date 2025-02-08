@@ -1,24 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background: #990000;
-    color: white;
+    background-color: #f5f5f5;
+    color: #333;
     text-align: center;
-    padding: 50px;
 }
+
+header {
+    background-color: #c62828;
+    color: white;
+    padding: 30px 20px;
+    font-size: 24px;
+}
+
 .container {
-    max-width: 600px;
-    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1000px;
 }
-.buy-btn {
-    display: inline-block;
-    background: #fff;
-    color: #990000;
-    padding: 10px 20px;
-    margin-top: 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
+
+.card {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.buy-btn:hover {
-    background: #ddd;
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.card button:hover {
+    background-color: #e64a19;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
